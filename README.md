@@ -1,4 +1,28 @@
 # RecommendationGenSBT
+About
+-----
+This is recommendation generation enables the user to generate recommendation based on the attributes provided for articles.
+
+Calculates similarity of articles identified by article based on their attributes values.
+The number of matching attributes is the most important metric for defining similarity.
+In case of a draw, attributes with name higher in alphabet (a is higher than z) is weighted with heavier weight.
+
+e.g)
+Example 1:
+----------
+{"article-1": {"att-a": "a1", "att-b": "b1", "att-c": "c1"}} is more similar to
+{"article-2": {"att-a": "a2", "att-b": "b1", "att-c": "c1"}} than to
+{"article-3": {"att-a": "a1", "att-b": "b3", "att-c": "c3"}}
+
+Example 2:
+----------
+{"article-1": {"att-a": "a1", "att-b": "b1"}} is more similar to
+{"article-2": {"att-a": "a1", "att-b": "b2"}} than to
+{"article-3": {"att-a": "a2", "att-b": "b1"}}
+
+sample data available under resources
+
+
 
 Instructions
 ------------
@@ -8,6 +32,15 @@ The submission can be done by passing relevant arguments. Use the built jar  to 
 Usage sample:
 ------------
 spark-submit --master local --class RecommendationGenerator recommendationgensbt_2.10-1.0.jar sku-2000 /media/batch1/home24-test-data.json /media/new1
+
+In windows
+----------
+Download and save the util at ,
+"C://winutils/bin" from 
+http://public-repo-1.hortonworks.com/hdp-win-alpha/winutils.exe
+
+On execution set VM argument as -Dhadoop.home.dir=C:\\winutil\\
+
 
 Usage format:
 -------------
