@@ -31,7 +31,7 @@ The submission can be done by passing relevant arguments. Use the built jar  to 
 
 Usage sample:
 ------------
-spark-submit --master local --class RecommendationGenerator recommendationgensbt_2.10-1.0.jar sku-2000 /media/batch1/home24-test-data.json /media/new1
+spark-submit --master local --class RecommendationGenerator recommendationgensbt_2.10-1.0.jar article-2000 /media/batch1/home24-test-data.json /media/new1
 
 In windows
 ----------
